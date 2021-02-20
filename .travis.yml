@@ -26,4 +26,4 @@ deploy:
   local-dir: build
   on:
     branch: master
-  github_token: $TRAVIS_DEPLOY_TOKEN
+  github-token: $GITHUB_TOKEN
