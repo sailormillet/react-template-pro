@@ -12,8 +12,10 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": " react-app-rewired start",
+    "build": "react-app-rewired build",
+    "start1": "react-scripts start",
+    "build1": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -36,6 +38,8 @@
     ]
   },
   "devDependencies": {
-    "eslint-config-airbnb": "^18.2.1"
+    "customize-cra": "^1.0.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "react-app-rewired": "^2.1.8"
   }
 }

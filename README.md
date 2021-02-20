@@ -1,3 +1,30 @@
+# react-template-pro
+
+## 修改
+
+```
+ yarn add react-app-rewired customize-cra -D
+```
+
+## 目录规范
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
