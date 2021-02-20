@@ -1,13 +1,63 @@
 # react-template-pro
 
-## 修改
+https://sailormillet.github.io/react-template-pro/
+
+## 修改webpack配置
 
 ```
  yarn add react-app-rewired customize-cra -D
 ```
-
 ## 目录规范
-
+```
+├── deploy                      //项目部署 包括集群、目标机器、git地址、文件黑名单等
+├── public                      //favicon.ico、index.html入口文件、manifest.json移动App的配置文件、第三方js工具库
+│   ├── js                           
+│   │   ├── console.js          // 修复在不支持或部分支持console的浏览器
+│   │   └── viewport.js         
+│   ├── index.html              // html公共模版
+│   ├── favicon.ico             // 公共logo
+├── src                         // 源文件开发目录
+│   ├── components              // 基本组件            
+│   ├── config                  // 全局配置            
+│   │   └── index.js            
+│   ├── styles                  // 全局公用css以及iconfont           
+│   │   ├── font                       
+│   │   ├── theme.js                      
+│   │   ├── base.scss          
+│   │   └── variables.scss     
+│   ├── assets                  // 图片资源
+│   ├── views                   // 具体业务页面
+│   │   ├──  detail             //  筹款详情...
+│   │   │   ├──  dynamic        //  筹款动态
+│   │   ├──  my 
+│   │   │   ├──  setting        //  设置头像昵称
+│   │   │   ├──  user_center    //  个人中心
+│   │   │   └──  ban_french     //  集合落地页    
+│   │   ├──      
+│   │   └──   
+│   ├── router                  // 路由
+│   │   └──index.js             // 总入口
+│   ├── store                   // 状态管理
+│   │   └── index.js            // redux文件列表
+│   ├── utils                   // 全局公用工具类           
+│   │   ├── ajax.js             // 调用请求接口   
+│   │   ├── index.js            // 工具库 
+│   │   └── log.js              // 打点
+│   └── const                   // 常量
+├── tests                       // 单元测试
+├── template                    // 模板
+├── README.md                   // 开发文档
+├── setupProxy.js               // 开发环境中代理 API 请求
+├── config-overrides.js         // webpack打包的配置             
+├── build.sh                    // 编译配置
+├── .gitignore                  
+├── .babelrc                    // babel配置                 
+├── .eslintrc                   // ESLint 配置文件   
+├── .env                        
+├── .editorconfig               // IDE定义配置
+├── package.json                // 模块描述文件
+├── yarn.lock                   // 依赖文件
+```
 
 
 

@@ -41,8 +41,9 @@ const addCustomize = () => config => {
     const paths = require('react-scripts/config/paths');
     paths.appBuild = path.join(path.dirname(paths.appBuild), 'dist');
     config.output.path = path.join(path.dirname(config.output.path), 'dist');
-    // config.output.path = __dirname + '/dist';
-    config.output.publicPath = './';
+    // paths.publicPath = './';
+    // config.output.publicPath = './';
+    
     // // 添加js打包gzip配置
     // config.plugins.push(
     //   new CompressionWebpackPlugin({
