@@ -27,8 +27,6 @@ https://sailormillet.github.io/react-template-pro/
 │   │   └── variables.scss     
 │   ├── assets                  // 图片资源
 │   ├── views                   // 具体业务页面
-│   │   ├──  detail             //  筹款详情...
-│   │   │   ├──  dynamic        //  筹款动态
 │   │   ├──  my 
 │   │   │   ├──  setting        //  设置头像昵称
 │   │   │   ├──  user_center    //  个人中心
