@@ -68,13 +68,13 @@ module.exports = override(
   disableEsLint(),
   // alias
   addWebpackAlias({
-    'src': path.join(__dirname, 'src'),
+    '@src': path.join(__dirname, 'src'),
     '@components': path.join(__dirname, 'src/components'),
-    '@pages': path.join(__dirname, 'src/pages'),
+    '@app': path.join(__dirname, 'src/app'),
     '@utils': path.join(__dirname, 'src/utils'),
-    '@css': path.join(__dirname, 'src/css'),
-    '@img': path.join(__dirname, 'src/img'),
-    '@config': path.join(__dirname, 'src/config'),
+    '@styles': path.join(__dirname, 'src/styles'),
+    '@assets': path.join(__dirname, 'src/assets'),
+    '@const': path.join(__dirname, 'src/const'),
     '@store': path.join(__dirname, 'src/store'),
     '@router': path.join(__dirname, 'src/router'),
   }),
