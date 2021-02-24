@@ -7,7 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 
 const routeKey = [];
 function sendToAnalytics(metric) {
-  console.log(metric);
+  // console.log(metric);
   // const body = JSON.stringify(metric);
   // Use `navigator.sendBeacon()` if available, falling back to `fetch()`.
   // (navigator.sendBeacon && navigator.sendBeacon('/analytics', body)) ||
