@@ -1,8 +1,12 @@
 import logo from "@src/logo.svg";
 import "./index.css";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function App() {
+  const history = useHistory();
+  const handleKeyDown = () => {
+    history.push("/my");
+  };
   return (
     <div className="App">
       <header className="App-header">
@@ -10,9 +14,9 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <Link className="App-link" to="/my">
+        <div className="App-link" onClick={handleKeyDown}>
           Learn React
-        </Link>
+        </div>
       </header>
     </div>
   );

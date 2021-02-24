@@ -26,6 +26,19 @@
     "lint:styleone": "stylelint --fix src/pages/manage/equipment/components/tabcontent.module.scss",
     "lint:style": "stylelint --fix src/**/*.{html,css,scss}"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "@src/(.*)": "<rootDir>/src/$1",
+      "@components/(.*)": "<rootDir>/src/components/$1",
+      "@app/(.*)": "<rootDir>/src/app/$1",
+      "@utils/(.*)": "<rootDir>/src/utils/$1",
+      "@styles/(.*)": "<rootDir>/src/styles/$1",
+      "@assets/(.*)": "<rootDir>/src/assets/$1",
+      "@const/(.*)": "<rootDir>/src/const/$1",
+      "@store/(.*)": "<rootDir>/src/store/$1",
+      "@router/(.*)": "<rootDir>/src/router/$1"
+    }
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
