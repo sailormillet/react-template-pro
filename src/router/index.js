@@ -5,7 +5,7 @@ export const root = [
     exact: true,
     path: "/",
     key: "home",
-    component: lazy(() => import("@app/Home")),
+    component: lazy(() => import("@app/home")),
   },
   {
     exact: true,
