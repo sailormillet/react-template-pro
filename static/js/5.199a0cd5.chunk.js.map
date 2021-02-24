@@ -1,0 +1,1 @@
+{"version":3,"sources":["app/notFound/index.js"],"names":["Index"],"mappings":"kIAAA,wBAMeA,UAJf,WACE,OAAO","file":"static/js/5.199a0cd5.chunk.js","sourcesContent":["import \"./index.css\";\n\nfunction Index() {\n  return <div>notFound</div>;\n}\n\nexport default Index;\n"],"sourceRoot":""}
