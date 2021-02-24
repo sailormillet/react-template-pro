@@ -18,7 +18,28 @@
     "start1": "react-scripts start",
     "build1": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src/**/*.{js,ts,tsx}",
+    "fix": "prettier --write src/**/*.{js,ts,tsx}",
+    "lint:one": "eslint --fix config-overrides.js",
+    "lint:one1": "eslint --fix src/app/Home/index.js",
+    "lint:styleone": "stylelint --fix src/pages/manage/equipment/components/tabcontent.module.scss",
+    "lint:style": "stylelint --fix src/**/*.{html,css,scss}"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{css,scss}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "src/**/*.{js,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   },
   "browserslist": {
     "production": [
@@ -36,6 +57,17 @@
     "cross-env": "^7.0.3",
     "customize-cra": "^1.0.0",
     "eslint-config-airbnb": "^18.2.1",
-    "react-app-rewired": "^2.1.8"
+    "eslint-config-prettier": "^8.0.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^5.1.1",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
+    "react-app-rewired": "^2.1.8",
+    "stylelint": "^13.11.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-prettier": "^1.1.2"
   }
 }

@@ -8,15 +8,76 @@
     "extends": [
         "react-app",
         "react-app/jest",
-        // "airbnb"
-        // "plugin:prettier/recommended",
-        // "prettier/react"
+        // "prettier",
+        "airbnb",
+        "airbnb/hooks",
+        // "prettier/react",
+        "plugin:prettier/recommended"
     ],
-    // "plugins": [
-    //     "prettier"
-    // ],
-    // "parser": "babel-eslint",
-    // "rules": {
-    //     "prettier/prettier": "error"
-    // }
+    "plugins": [
+        "react",
+        "prettier",
+        "react-hooks"
+    ],
+    "parser": "babel-eslint",
+    "settings": {
+        "import/resolver": {
+            "alias": {
+                "map": [
+                    [
+                        "@src",
+                        "./src/"
+                    ],
+                    [
+                        "@components",
+                        "./src/components/"
+                    ],
+                    [
+                        "@app",
+                        "./src/app/"
+                    ],
+                    [
+                        "@utils",
+                        "./src/utils/"
+                    ],
+                    [
+                        "@styles",
+                        "./src/styles/"
+                    ],
+                    [
+                        "@assets",
+                        "./src/assets/"
+                    ],
+                    [
+                        "@const",
+                        "./src/const/"
+                    ],
+                    [
+                        "@store",
+                        "./src/store/"
+                    ],
+                    [
+                        "@router",
+                        "./src/router/"
+                    ],
+                ]
+            }
+        }
+    },
+    "rules": {
+        "prettier/prettier": "error",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "import/prefer-default-export": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+    }
 }

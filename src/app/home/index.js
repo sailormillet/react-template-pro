@@ -1,8 +1,7 @@
-import logo from '@src/logo.svg';
-import './index.css';
-import {
-  Link
-} from "react-router-dom";
+import logo from "@src/logo.svg";
+import "./index.css";
+import { Link } from "react-router-dom";
+
 function App() {
   return (
     <div className="App">
@@ -11,10 +10,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <Link
-          className="App-link"
-          to="/my"
-        >
+        <Link className="App-link" to="/my">
           Learn React
         </Link>
       </header>
