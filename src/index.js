@@ -18,7 +18,7 @@ const supportsHistory = "pushState" in window.history;
 ReactDOM.render(
   <React.StrictMode>
     <Router basename="/react-template-pro" forceRefresh={!supportsHistory}>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense maxDuration={500} fallback={<div>Loading...</div>}>
         <Switch>
           {root.map((item) => {
             if (item.key) {

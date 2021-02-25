@@ -34,6 +34,9 @@ https://sailormillet.github.io/react-template-pro/
 - 生态
   - 路由
     - react-router
+  - 代码分割
+    - react-loadable（ssr可用，推荐使用）
+    - ✅React.Suspense和React.lazy(闪现问题，maxDuration还是实验特性)
   - 状态管理
     - ✅ react hooks
     - ✅ mobx
@@ -105,7 +108,7 @@ https://sailormillet.github.io/react-template-pro/
 │   │   └── variables.scss     
 │   ├── assets                  // 图片资源
 │   ├── app                   // 具体业务页面
-│   │   ├──  my 
+│   │   ├──  userCenter 
 │   │   │   ├──  setting        //  设置头像昵称
 │   │   │   ├──  user_center    //  个人中心
 │   │   │   └──  ban_french     //  集合落地页    
