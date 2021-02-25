@@ -1,0 +1,2 @@
+(this["webpackJsonpbest-demo"]=this["webpackJsonpbest-demo"]||[]).push([[5],{30:function(e,t,n){},32:function(e,t,n){"use strict";n.r(t);n(30);var s=n(6);t.default=function(){return Object(s.jsx)("div",{children:"hello,my"})}}}]);
+//# sourceMappingURL=5.eeff3f00.chunk.js.map
