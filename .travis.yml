@@ -18,7 +18,11 @@ install:
 script:
 - yarn test
 - yarn build
-cache: yarn
+cache:
+  - npm
+  - yarn
+  # directories:
+  #   - node_modules
 deploy:
   provider: pages
   skip-cleanup: true
