@@ -116,13 +116,13 @@ https://sailormillet.github.io/react-template-pro/
 │   │   └──   
 │   ├── router                  // 路由
 │   │   └──index.js             // 总入口
-│   ├── store                   // 状态管理
+│   ├── reducers                // 状态管理
 │   │   └── index.js            // redux文件列表
 │   ├── utils                   // 全局公用工具类           
 │   │   ├── ajax.js             // 调用请求接口   
 │   │   ├── index.js            // 工具库 
 │   │   └── log.js              // 打点
-│   └── const                   // 常量
+│   └── constants               // 常量
 ├── tests                       // 单元测试
 ├── template                    // 模板
 ├── README.md                   // 开发文档

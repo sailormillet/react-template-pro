@@ -1,10 +1,15 @@
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
+import { applyMiddleware, createStore } from "redux";
+import { Provider } from "react-redux";
+import thunk from "redux-thunk";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./index.css";
 import { root } from "@router";
 // import reportWebVitals from "./reportWebVitals";
+import reducer from "./reducers";
 
+const store = createStore(reducer, applyMiddleware(thunk));
 const routeKey = [];
 // function sendToAnalytics(metric) {
 //   // console.log(metric);
@@ -16,7 +21,7 @@ const routeKey = [];
 const supportsHistory = "pushState" in window.history;
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <Router basename="/react-template-pro" forceRefresh={!supportsHistory}>
       <Suspense maxDuration={500} fallback={<div>Loading...</div>}>
         <Switch>
@@ -33,7 +38,7 @@ ReactDOM.render(
         </Switch>
       </Suspense>
     </Router>
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById("root")
 );
 

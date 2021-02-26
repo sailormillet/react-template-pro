@@ -56,8 +56,8 @@ module.exports = override(
     "@utils": path.join(__dirname, "src/utils"),
     "@styles": path.join(__dirname, "src/styles"),
     "@assets": path.join(__dirname, "src/assets"),
-    "@const": path.join(__dirname, "src/const"),
-    "@store": path.join(__dirname, "src/store"),
+    "@constants": path.join(__dirname, "src/constants"),
+    "@reducers": path.join(__dirname, "src/reducers"),
     "@router": path.join(__dirname, "src/router"),
   }),
   babelExclude([path.resolve("node_modules")]), // babelExclude(/node_modules/), // fixBabelImports('import', { //   libraryName: 'antd-mobile', //   style: 'css', // }), // fixBabelImports("import", {//antd按需加载 //   libraryName: "antd", //   libraryDirectory: "es", //   style: "css" // }), // addBundleVisualizer({ //   analyzerMode: 'static', //   reportFilename: 'report.html', // }, true),  //打包分析
