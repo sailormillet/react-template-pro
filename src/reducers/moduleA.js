@@ -1,4 +1,4 @@
-import { ADD_TO_MODULEA } from "@constants/ActionTypes";
+import { ADD_TO_MODULEA } from "../constants/ActionTypes";
 
 const initialState = {
   list: [],
