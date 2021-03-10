@@ -1,0 +1,2 @@
+(this["webpackJsonpbest-demo"]=this["webpackJsonpbest-demo"]||[]).push([[3],{39:function(t,n,e){},43:function(t,n,e){"use strict";e.r(n);e(39);var s=e(7);n.default=function(){return Object(s.jsx)("div",{children:"notFound"})}}}]);
+//# sourceMappingURL=3.22994186.chunk.js.map

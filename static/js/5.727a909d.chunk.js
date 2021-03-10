@@ -1,0 +1,2 @@
+(this["webpackJsonpbest-demo"]=this["webpackJsonpbest-demo"]||[]).push([[5],{38:function(t,e,n){},42:function(t,e,n){"use strict";n.r(e);n(38);var c=n(7);e.default=function(){return Object(c.jsxs)("div",{children:[Object(c.jsx)("h3",{children:"Your Cart"}),Object(c.jsx)("button",{type:"submit",onClick:function(){},children:"Checkout"})]})}}}]);
+//# sourceMappingURL=5.727a909d.chunk.js.map
