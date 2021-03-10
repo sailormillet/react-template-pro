@@ -1,11 +1,11 @@
-import { ADD_TO_MODULEA } from "../constants/ActionTypes";
+// import { ADD_TO_MODULEA } from "@constant/actionTypes";
 
 const initialState = {
-  list: [],
+  shopping_card: [],
 };
 const addedList = (state = initialState.list, action) => {
   switch (action.type) {
-    case ADD_TO_MODULEA:
+    case "ADD_TO_MODULEA":
       if (state.indexOf(action.productId) !== -1) {
         return state;
       }

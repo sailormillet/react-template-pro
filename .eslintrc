@@ -33,8 +33,8 @@
                         "./src/components/"
                     ],
                     [
-                        "@app",
-                        "./src/app/"
+                        "@pages",
+                        "./src/pages/"
                     ],
                     [
                         "@utils",
@@ -49,12 +49,16 @@
                         "./src/assets/"
                     ],
                     [
-                        "@const",
-                        "./src/const/"
+                        "@constants",
+                        "./src/constants/"
                     ],
                     [
-                        "@store",
-                        "./src/store/"
+                        "@reducers",
+                        "./src/reducers/"
+                    ],
+                    [
+                        "@actions",
+                        "./src/actions/"
                     ],
                     [
                         "@router",

@@ -1,21 +1,17 @@
-import logo from "@src/logo.svg";
-import "./index.css";
+import "./index.scss";
 import { useHistory } from "react-router-dom";
 
 function App() {
   const history = useHistory();
   const handleKeyDown = () => {
-    history.push("/my");
+    history.push("/product");
   };
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <p>{` hello,welcome to amy's shop `}</p>
         <div className="App-link" onClick={handleKeyDown}>
-          Learn React
+          {` let's start `}
         </div>
       </header>
     </div>

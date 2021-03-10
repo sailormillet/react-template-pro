@@ -15,17 +15,20 @@ https://sailormillet.github.io/react-template-pro/
   - [文档生成](#文档生成)
   - [持续集成](#持续集成)
   - [版本管理](#版本管理)
-  
+
 ## 项目管理
+
 - lerna
-- ✅ yarn 统一使用yarn
+- ✅ yarn 统一使用 yarn
 
 ## 语言
+
 - Typescript
 - ✅ Javascript
-  - 需要使用jsdoc进行注释, 推荐[渐进式迁移到Typescript](https://www.typescriptlang.org/docs/handbook/type-checking-javascript-files.html). 在无法运行Typescript的环境也推荐该注释方式
+  - 需要使用 jsdoc 进行注释, 推荐[渐进式迁移到 Typescript](https://www.typescriptlang.org/docs/handbook/type-checking-javascript-files.html). 在无法运行 Typescript 的环境也推荐该注释方式
 
 ## 框架
+
 - ✅ React
 - 备选
   - preact
@@ -35,13 +38,13 @@ https://sailormillet.github.io/react-template-pro/
   - 路由
     - react-router
   - 代码分割
-    - react-loadable（ssr可用，推荐使用）
-    - ✅React.Suspense和React.lazy(闪现问题，maxDuration还是实验特性)
+    - react-loadable（ssr 可用，推荐使用）
+    - ✅React.Suspense 和 React.lazy(闪现问题，maxDuration 还是实验特性)
   - 状态管理
     - ✅ react hooks
     - ✅ mobx
-    - redux 由于冗余的模板代码，以及不利于Typescript约束，我们已经停止使用该方式.
-  - UI框架
+    - redux 由于冗余的模板代码，以及不利于 Typescript 约束，我们已经停止使用该方式.
+  - UI 框架
     - ✅ antd
       - antd-mobile
     - 备选
@@ -55,112 +58,109 @@ https://sailormillet.github.io/react-template-pro/
     - sockjs
   - 地图
     - react-bdmap
+
 ## 样式
+
 - 命名规范
   - BEM
 - CSS-in-js
   - styled-components
 - pre-compiler
-  - ✅ SCSS
+  - ✅ SCSS CSS Modules
 - post-compiler
   - PostCSS + env
 
 ## QA
+
 - 测试
 
-    - 测试框架
-        - jest
-    - 组件测试
-        - react-testing-library
-        - enzyme: react组件测试
-    - hooks 测试
-        - react-hooks-testing-library
-        - puppeteer: headless chrome
+  - 测试框架
+    - jest
+  - 组件测试
+    - react-testing-library
+    - enzyme: react 组件测试
+  - hooks 测试
+    - react-hooks-testing-library
+    - puppeteer: headless chrome
+
 - lint
-    - tslint
-    - eslint
-    - stylelint
+  - tslint
+  - eslint
+  - stylelint
 - 代码格式化
 - ✅ prettier
 
-## 修改webpack配置
+## 修改 webpack 配置
 
 ```
  yarn add react-app-rewired customize-cra -D
 ```
+
 ## 目录规范
+
 ```
 ├── deploy                      //项目部署 包括集群、目标机器、git地址、文件黑名单等
 ├── public                      //favicon.ico、index.html入口文件、manifest.json移动App的配置文件、第三方js工具库
-│   ├── js                           
+│   ├── js
 │   │   ├── console.js          // 修复在不支持或部分支持console的浏览器
-│   │   └── viewport.js         
+│   │   └── viewport.js
 │   ├── index.html              // html公共模版
 │   ├── favicon.ico             // 公共logo
 ├── src                         // 源文件开发目录
-│   ├── components              // 基本组件            
-│   ├── config                  // 全局配置            
-│   │   └── index.js            
-│   ├── styles                  // 全局公用css以及iconfont           
-│   │   ├── font                       
-│   │   ├── theme.js                      
-│   │   ├── base.scss          
-│   │   └── variables.scss     
+│   ├── components              // 基本组件
+│   ├── config                  // 全局配置
+│   │   └── index.js
+│   ├── styles                  // 全局公用css以及iconfont
+│   │   ├── font
+│   │   ├── theme.js
+│   │   ├── base.module.scss
+│   │   └── variables.module.scss
 │   ├── assets                  // 图片资源
-│   ├── app                   // 具体业务页面
-│   │   ├──  userCenter 
+│   ├── pages                   // 具体业务页面
+│   │   ├──  userCenter
 │   │   │   ├──  setting        //  设置头像昵称
 │   │   │   ├──  user_center    //  个人中心
-│   │   │   └──  ban_french     //  集合落地页    
-│   │   ├──      
-│   │   └──   
+│   │   │   └──  ban_french     //  集合落地页
+│   │   ├──
+│   │   └──
 │   ├── router                  // 路由
 │   │   └──index.js             // 总入口
 │   ├── reducers                // 状态管理
 │   │   └── index.js            // redux文件列表
-│   ├── utils                   // 全局公用工具类           
-│   │   ├── ajax.js             // 调用请求接口   
-│   │   ├── index.js            // 工具库 
+│   ├── utils                   // 全局公用工具类
+│   │   ├── ajax.js             // 调用请求接口
+│   │   ├── index.js            // 工具库
 │   │   └── log.js              // 打点
 │   └── constants               // 常量
 ├── tests                       // 单元测试
 ├── template                    // 模板
 ├── README.md                   // 开发文档
 ├── setupProxy.js               // 开发环境中代理 API 请求
-├── config-overrides.js         // webpack打包的配置             
+├── config-overrides.js         // webpack打包的配置
 ├── build.sh                    // 编译配置
-├── .gitignore                  
-├── .babelrc                    // babel配置                 
-├── .eslintrc                   // ESLint 配置文件   
-├── .env                        
+├── .gitignore
+├── .babelrc                    // babel配置
+├── .eslintrc                   // ESLint 配置文件
+├── .env
 ├── .editorconfig               // IDE定义配置
 ├── package.json                // 模块描述文件
 ├── yarn.lock                   // 依赖文件
 ```
+
 ## 模板引擎
+
 pug
 
 ## 文档生成(do)
+
 - docz
 - ✅ storybook
 - draw.io: 绘图工具
 
 ## nodejs
+
 - express
 - sock.js
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 # Getting Started with Create React App
 

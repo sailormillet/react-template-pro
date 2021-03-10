@@ -1,0 +1,23 @@
+html,
+body {
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  line-height: 1.4;
+  @include font-size(30px);
+  -webkit-text-size-adjust: 100% !important;
+  text-size-adjust: 100% !important;
+}
+
+body {
+  font-family: "PingFangSC-Regular", "Microsoft Yahei", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: $color_black;
+  @include bg-color($color_fff);
+  // -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  outline: 0;
+  position: relative;
+  top: 0;
+  right: 0;
+  left: 0;
+}

@@ -11,6 +11,7 @@ const {
   addBundleVisualizer, // 打包分析
   fixBabelImports, // addWebpackResolve, // addWebpackPlugin, // adjustWorkbox, // addWebpackExternals, // removeModuleScopePlugin, // addWebpackModuleRule, // setWebpackPublicPath,
   babelExclude,
+  adjustStyleLoaders,
 } = require("customize-cra");
 
 // const theme = require('./src/css/theme.js');
@@ -48,17 +49,32 @@ module.exports = override(
   // 添加修饰器 根目录下创建.babelrc
   // useBabelRc(),
   // 禁用默认eslint，使用自定义eslint,根目录下创建.eslintrc.js
-  disableEsLint(), // alias
+  disableEsLint(),
+  // alias
   addWebpackAlias({
     "@src": path.join(__dirname, "src"),
     "@components": path.join(__dirname, "src/components"),
-    "@app": path.join(__dirname, "src/app"),
+    "@pages": path.join(__dirname, "src/pages"),
     "@utils": path.join(__dirname, "src/utils"),
     "@styles": path.join(__dirname, "src/styles"),
     "@assets": path.join(__dirname, "src/assets"),
     "@constants": path.join(__dirname, "src/constants"),
     "@reducers": path.join(__dirname, "src/reducers"),
     "@router": path.join(__dirname, "src/router"),
+  }),
+  adjustStyleLoaders((rule) => {
+    if (rule.test.toString().includes("scss")) {
+      rule.use.push({
+        loader: require.resolve("sass-resources-loader"),
+        options: {
+          resources: [
+            path.join(__dirname, "src/styles/mixin.scss"),
+            path.join(__dirname, "src/styles/variable.scss"),
+            path.join(__dirname, "src/styles/reset.scss"),
+          ], // 这里是你自己放公共scss变量的路径
+        },
+      });
+    }
   }),
   babelExclude([path.resolve("node_modules")]), // babelExclude(/node_modules/), // fixBabelImports('import', { //   libraryName: 'antd-mobile', //   style: 'css', // }), // fixBabelImports("import", {//antd按需加载 //   libraryName: "antd", //   libraryDirectory: "es", //   style: "css" // }), // addBundleVisualizer({ //   analyzerMode: 'static', //   reportFilename: 'report.html', // }, true),  //打包分析
   addCustomize()

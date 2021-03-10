@@ -1,0 +1,20 @@
+.nav {
+  background-color: $color_282c34;
+  &_main {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: px2rem(10px) px2rem(20px);
+    max-width: $maxWidth;
+  }
+}
+.link {
+  font-size: px2rem(30px);
+  color: #fff;
+  text-decoration: auto;
+}
+.main {
+  margin: auto;
+  max-width: $maxWidth;
+}
