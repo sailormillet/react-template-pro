@@ -4,6 +4,7 @@ https://sailormillet.github.io/react-template-pro/
 
 - [技术栈规范](#技术栈规范)
   - [项目管理](#项目管理)
+  - [vsCode需要的插件](#vsCode需要的插件)
   - [语言](#语言)
   - [框架](#框架)
   - [样式](#样式)
@@ -26,6 +27,17 @@ https://sailormillet.github.io/react-template-pro/
 - Typescript
 - ✅ Javascript
   - 需要使用 jsdoc 进行注释, 推荐[渐进式迁移到 Typescript](https://www.typescriptlang.org/docs/handbook/type-checking-javascript-files.html). 在无法运行 Typescript 的环境也推荐该注释方式
+
+## vsCode需要的插件
+
+- EditorConfig
+- stylelint
+- prettier 当安装结束后， 在项目根目录新建一个文件夹 .vscode ，在此文件下再建一个 settings.json 文件：该文件的配置优先于 vscode 全局的 settings.json ，这样别人下载了你的项目进行开发，也不会因为全局 setting.json 的配置不同而导致 Prettier 或之后会说到的 ESLint 、 StyleLint 失效，接下来在该文件内输入以下代码：
+- stylelint
+- stylelint
+- stylelint
+- stylelint
+
 
 ## 框架
 

@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["src/*"],
+      "@router": ["src/router/index.ts"],
+      "@components/*": ["src/components"],
+      "@pages/*": ["src/pages/*"],
+      "@utils/*": ["src/utils"],
+      "@styles/*": ["src/styles"],
+      "@assets/*": ["src/assets"],
+      "@constants/*": ["src/constants"],
+      "@reducers/*": ["src/reducers"]
+    }
+  }
+}

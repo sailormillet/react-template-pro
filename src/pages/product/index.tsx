@@ -7,7 +7,9 @@ function Index() {
     { id: 2, title: "H&M T-Shirt White", price: 10.99, inventory: 10 },
     { id: 3, title: "Charli XCX - Sucker CD", price: 19.99, inventory: 5 },
   ];
-  const addToCart = () => {};
+  const addToCart = (productId: number) => {
+    console.log(productId);
+  };
   return (
     <div>
       <header className={`${Css.nav}`}>
@@ -28,7 +30,7 @@ function Index() {
               {product.title} - &#36;{product.price}
               {product.inventory ? ` x ${product.inventory}` : null}
             </div>
-            <button type="button" onClick={() => addToCart(product.id)} disabled={product.inventory > 0 ? "" : "disabled"}>
+            <button type="button" onClick={() => addToCart(product.id)} disabled={product.inventory > 0}>
               {product.inventory > 0 ? "Add to cart" : "Sold Out"}
             </button>
           </div>

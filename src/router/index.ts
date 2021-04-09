@@ -1,9 +1,9 @@
 import { lazy } from "react";
 
-const slow = (component, delay = 1000) => {
+const slow = (page: func, delay = 1000) => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      return resolve(component);
+      return resolve(page);
     }, delay);
   });
 };

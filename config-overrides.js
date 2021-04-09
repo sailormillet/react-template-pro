@@ -13,7 +13,7 @@ const {
   babelExclude,
   adjustStyleLoaders,
 } = require("customize-cra");
-
+const {alias, configPaths,aliasJest} = require('react-app-rewire-alias')
 // const theme = require('./src/css/theme.js');
 
 // const isEnvProduction = process.env.NODE_ENV === 'production'
@@ -22,6 +22,10 @@ const {
 // 打包配置
 const addCustomize = () => (config) => {
   console.log(process.env.NODE_ENV);
+  const aliasMap = configPaths('./tsconfig.paths.json')
+  console.log(aliasMap)
+  alias(aliasMap)(config)
+  aliasJest(aliasMap)(config)
   if (process.env.NODE_ENV === "production") {
     // 关闭sourceMap
     // config.devtool = 'cheap-module-source-map';
@@ -50,18 +54,7 @@ module.exports = override(
   // useBabelRc(),
   // 禁用默认eslint，使用自定义eslint,根目录下创建.eslintrc.js
   disableEsLint(),
-  // alias
-  addWebpackAlias({
-    "@src": path.join(__dirname, "src"),
-    "@components": path.join(__dirname, "src/components"),
-    "@pages": path.join(__dirname, "src/pages"),
-    "@utils": path.join(__dirname, "src/utils"),
-    "@styles": path.join(__dirname, "src/styles"),
-    "@assets": path.join(__dirname, "src/assets"),
-    "@constants": path.join(__dirname, "src/constants"),
-    "@reducers": path.join(__dirname, "src/reducers"),
-    "@router": path.join(__dirname, "src/router"),
-  }),
+
   adjustStyleLoaders((rule) => {
     if (rule.test.toString().includes("scss")) {
       rule.use.push({

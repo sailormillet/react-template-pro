@@ -3,14 +3,14 @@ import ReactDOM from "react-dom";
 import { applyMiddleware, createStore } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import "./index.scss";
 import { root } from "@router";
 // import reportWebVitals from "./reportWebVitals";
 import reducer from "./reducers";
 
 const store = createStore(reducer, applyMiddleware(thunk));
-const routeKey = [];
+let routeKey: any[];
 // function sendToAnalytics(metric) {
 //   // console.log(metric);
 //   // const body = JSON.stringify(metric);
@@ -22,8 +22,10 @@ const supportsHistory = "pushState" in window.history;
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router basename="/react-template-pro" forceRefresh={!supportsHistory}>
-      <Suspense maxDuration={500} fallback={<div>Loading...</div>}>
+    <Router basename="/react-template-pro">
+      <Suspense fallback={<div>Loading...</div>}>
+        {/* <Router basename="/react-template-pro" forceRefresh={!supportsHistory}>
+      <Suspense maxDuration={500} fallback={<div>Loading...</div>}> */}
         <Switch>
           {root.map((item) => {
             if (item.key) {

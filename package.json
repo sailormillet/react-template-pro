@@ -6,6 +6,10 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.21",
+    "@types/node": "^14.14.35",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -16,6 +20,7 @@
     "redux-thunk": "^2.3.0",
     "sass-loader": "^11.0.1",
     "sass-resources-loader": "^2.1.1",
+    "typescript": "^4.2.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -27,23 +32,11 @@
     "eject": "react-scripts eject",
     "lint": "eslint src/**/*.{js,ts,tsx}",
     "fix": "prettier --write src/**/*.{js,ts,tsx}",
+    "fix:one": "prettier --write src/router/index.{js,ts,tsx}",
     "lint:one": "eslint --fix config-overrides.js",
     "lint:one1": "eslint --fix src/app/Home/index.js",
     "lint:styleone": "stylelint --fix src/pages/manage/equipment/components/tabcontent.module.scss",
     "lint:style": "stylelint --fix src/**/*.{html,css,scss}"
-  },
-  "jest": {
-    "moduleNameMapper": {
-      "@src/(.*)": "<rootDir>/src/$1",
-      "@components/(.*)": "<rootDir>/src/components/$1",
-      "@pages/(.*)": "<rootDir>/src/pages/$1",
-      "@utils/(.*)": "<rootDir>/src/utils/$1",
-      "@styles/(.*)": "<rootDir>/src/styles/$1",
-      "@assets/(.*)": "<rootDir>/src/assets/$1",
-      "@constants/(.*)": "<rootDir>/src/constants/$1",
-      "@reducers/(.*)": "<rootDir>/src/reducers/$1",
-      "@router/(.*)": "<rootDir>/src/router/$1"
-    }
   },
   "husky": {
     "hooks": {
@@ -73,16 +66,24 @@
     ]
   },
   "devDependencies": {
+    "@types/react-redux": "^7.1.16",
+    "@types/react-router-dom": "^5.1.7",
+    "@typescript-eslint/eslint-plugin": "^4.21.0",
+    "@typescript-eslint/parser": "^4.21.0",
     "cross-env": "^7.0.3",
     "customize-cra": "^1.0.0",
+    "eslint": "^7.23.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.0.0",
     "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^5.1.1",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
+    "react-app-rewire-alias": "^1.0.3",
     "react-app-rewired": "^2.1.8",
     "stylelint": "^13.11.0",
     "stylelint-config-prettier": "^8.0.2",

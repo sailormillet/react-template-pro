@@ -2,7 +2,9 @@ import "./index.scss";
 
 // import Product from "@pages/components/product";
 function Index() {
-  const onCheckoutClicked = () => {};
+  const onCheckoutClicked = () => {
+    console.log(22222);
+  };
   return (
     <div>
       <h3>Your Cart</h3>

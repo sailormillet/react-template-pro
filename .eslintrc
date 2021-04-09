@@ -5,70 +5,55 @@
         "node": true,
         "es6": true
     },
-    "extends": [
-        "react-app",
-        "react-app/jest",
-        // "prettier",
-        "airbnb",
-        "airbnb/hooks",
-        // "prettier/react",
-        "plugin:prettier/recommended"
-    ],
-    "plugins": [
-        "react",
-        "prettier",
-        "react-hooks"
-    ],
-    "parser": "babel-eslint",
-    "settings": {
-        "import/resolver": {
-            "alias": {
-                "map": [
-                    [
-                        "@src",
-                        "./src/"
-                    ],
-                    [
-                        "@components",
-                        "./src/components/"
-                    ],
-                    [
-                        "@pages",
-                        "./src/pages/"
-                    ],
-                    [
-                        "@utils",
-                        "./src/utils/"
-                    ],
-                    [
-                        "@styles",
-                        "./src/styles/"
-                    ],
-                    [
-                        "@assets",
-                        "./src/assets/"
-                    ],
-                    [
-                        "@constants",
-                        "./src/constants/"
-                    ],
-                    [
-                        "@reducers",
-                        "./src/reducers/"
-                    ],
-                    [
-                        "@actions",
-                        "./src/actions/"
-                    ],
-                    [
-                        "@router",
-                        "./src/router/"
-                    ],
-                ]
-            }
+    "parser": "@typescript-eslint/parser",//定义ESLint的解析器,在ts项目中必须执行解析器为@typescript-eslint/parser，才能正确的检测和规范TS代码
+    "parserOptions": {        //指定ESLint可以解析JSX语法
+        "ecmaVersion": 2021,
+        "sourceType": "module",
+        "ecmaFeatures":{
+            "jsx":true
         }
     },
+    "settings": {
+      "react": {//自动发现React的版本，从而进行规范react代码
+        "pragma": "React",
+        "version": "detect"
+      },
+      "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
+      "import/parsers": {
+        "@typescript-eslint/parser": [".ts", ".tsx"]
+      },
+      "import/resolver": {
+          // 解决tsconfig下的path别名导致eslint插件无法解决的bug
+          "typescript": {
+            "alwaysTryTypes": true,// 从 <roo/>@types 读取类型定义
+            "directory": "./tsconfig.json"
+          },
+          "node": {
+            "extensions": [".js", ".jsx", ".ts", ".tsx"]
+          }
+        }
+    },
+    "plugins": [
+        "import",
+        "react",
+        "prettier",
+        "react-hooks",
+        "@typescript-eslint"
+    ],
+    "extends": [
+      // "react-app",
+      // "react-app/jest",
+      "airbnb",
+      "airbnb/hooks",
+      // "prettier/react",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:prettier/recommended",
+      // "plugin:@typescript-eslint/eslint-recommended",
+      // "plugin:@typescript-eslint/recommended",
+      // "prettier"
+  ],
     "rules": {
+        "import/no-unresolved": "error",
         "prettier/prettier": "error",
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
@@ -79,12 +64,26 @@
             {
                 "extensions": [
                     ".js",
-                    ".jsx"
+                    ".jsx",
+                    ".ts",
+                    ".tsx"
                 ]
             }
         ],
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+              "js": "never",
+              "jsx": "never",
+              "ts": "never",
+              "tsx": "never"
+            }
+         ],
         // 有一些 event 的时候，不需要 role 属性，不需要其他解释
         "jsx-a11y/no-static-element-interactions": 0,
         "jsx-a11y/click-events-have-key-events": 0,
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": ["error"]
     }
 }

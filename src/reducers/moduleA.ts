@@ -2,8 +2,14 @@
 
 const initialState = {
   shopping_card: [],
+  list: [],
+  addedList: [],
 };
-const addedList = (state = initialState.list, action) => {
+type actionT = {
+  type: any;
+  productId: never;
+};
+const addedList = (state = initialState.list, action: actionT) => {
   switch (action.type) {
     case "ADD_TO_MODULEA":
       if (state.indexOf(action.productId) !== -1) {
@@ -15,8 +21,9 @@ const addedList = (state = initialState.list, action) => {
   }
 };
 
-export const getAddedList = (state) => state.addedList;
-const cart = (state = initialState, action) => {
+export const getAddedList = (state: any) => state.addedList;
+
+const cart = (state = initialState, action: actionT) => {
   switch (action.type) {
     // case CHECKOUT_REQUEST:
     //   return initialState;

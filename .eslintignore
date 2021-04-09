@@ -1,2 +1,6 @@
 src/css/*.{js,ts,tsx}
 src/img/*.{js,ts,tsx}
+# project
+.idea/
+.vscode/*
+!.vscode/settings.json
