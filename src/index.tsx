@@ -10,7 +10,7 @@ import { root } from "@router";
 import reducer from "./reducers";
 
 const store = createStore(reducer, applyMiddleware(thunk));
-let routeKey: any[];
+const routeKey: string[] = [];
 // function sendToAnalytics(metric) {
 //   // console.log(metric);
 //   // const body = JSON.stringify(metric);
@@ -18,7 +18,7 @@ let routeKey: any[];
 //   // (navigator.sendBeacon && navigator.sendBeacon('/analytics', body)) ||
 //   //     fetch('/analytics', {body, method: 'POST', keepalive: true});
 // }
-const supportsHistory = "pushState" in window.history;
+// const supportsHistory = "pushState" in window.history;
 
 ReactDOM.render(
   <Provider store={store}>

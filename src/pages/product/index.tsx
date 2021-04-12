@@ -7,7 +7,7 @@ function Index() {
     { id: 2, title: "H&M T-Shirt White", price: 10.99, inventory: 10 },
     { id: 3, title: "Charli XCX - Sucker CD", price: 19.99, inventory: 5 },
   ];
-  const addToCart = (productId: number) => {
+  const addToCart = (productId: number): void => {
     console.log(productId);
   };
   return (

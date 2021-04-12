@@ -1,6 +1,6 @@
 import { lazy } from "react";
 
-const slow = (page: func, delay = 1000) => {
+const slow = (page: any, delay = 1000) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       return resolve(page);
@@ -8,11 +8,17 @@ const slow = (page: func, delay = 1000) => {
   });
 };
 export const root = [
+  // {
+  //   exact: true,
+  //   path: "/",
+  //   key: "home",
+  //   component: lazy(() => slow(import("@pages/home"))),
+  // },
   {
     exact: true,
     path: "/",
     key: "home",
-    component: lazy(() => slow(import("@pages/home"))),
+    component: lazy(() => import("@pages/home")),
   },
   {
     exact: true,
