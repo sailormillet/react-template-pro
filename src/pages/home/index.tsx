@@ -1,7 +1,8 @@
 import "./index.scss";
 import { useHistory } from "react-router-dom";
 
-function App() {
+// const App: React.FunctionComponent<Props> = (props: Props) => {
+const App = () => {
   const history = useHistory();
   const handleKeyDown = () => {
     history.push("/product");
@@ -16,6 +17,6 @@ function App() {
       </header>
     </div>
   );
-}
+};
 
 export default App;

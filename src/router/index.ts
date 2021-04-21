@@ -1,24 +1,18 @@
-import { lazy } from "react";
+import { lazy, ComponentType } from "react";
 
-const slow = (page: any, delay = 1000) => {
+function slow<T extends { default: ComponentType<T> }>(page: Promise<T>, delay = 1000): Promise<T> {
   return new Promise((resolve) => {
     setTimeout(() => {
       return resolve(page);
     }, delay);
   });
-};
+}
 export const root = [
-  // {
-  //   exact: true,
-  //   path: "/",
-  //   key: "home",
-  //   component: lazy(() => slow(import("@pages/home"))),
-  // },
   {
     exact: true,
     path: "/",
     key: "home",
-    component: lazy(() => import("@pages/home")),
+    component: lazy(() => slow(import("@pages/home"))),
   },
   {
     exact: true,

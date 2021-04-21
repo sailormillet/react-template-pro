@@ -6,7 +6,7 @@ const initialState = {
   addedList: [],
 };
 type actionT = {
-  type: any;
+  type: string;
   productId: never;
 };
 const addedList = (state = initialState.list, action: actionT) => {
@@ -21,12 +21,10 @@ const addedList = (state = initialState.list, action: actionT) => {
   }
 };
 
-export const getAddedList = (state: any) => state.addedList;
+// export const getAddedList = (state: any) => state.addedList;
 
 const cart = (state = initialState, action: actionT) => {
   switch (action.type) {
-    // case CHECKOUT_REQUEST:
-    //   return initialState;
     default:
       return {
         addedList: addedList(state.addedList, action),
