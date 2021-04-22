@@ -36,8 +36,8 @@
     "plugins": [
         "import",
         "react",
-        "prettier",
         "react-hooks",
+        "prettier",
         "@typescript-eslint",
         "jsx-a11y"
     ],
@@ -46,6 +46,9 @@
       "airbnb/hooks",
       "plugin:react/recommended",// Uses the recommended rules from @eslint-plugin-react
       "plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:import/typescript",
       "plugin:@typescript-eslint/eslint-recommended",
       "plugin:prettier/recommended" // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
       // "react-app/jest",
@@ -82,7 +85,6 @@
         "jsx-a11y/no-static-element-interactions": 0,
         "jsx-a11y/click-events-have-key-events": 0,
         "no-use-before-define": "off",
-        "import/newline-after-import": ["error", { "count": 1 }],
         "@typescript-eslint/no-use-before-define": ["error"]
     }
 }

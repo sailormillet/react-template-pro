@@ -6,26 +6,25 @@ import thunk from "redux-thunk";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import "./index.scss";
 import { root } from "@router";
-// import reportWebVitals from "./reportWebVitals";
+import { Metric } from "web-vitals";
+import { Loading } from "@components";
+import reportWebVitals from "./reportWebVitals";
 import reducer from "./reducers";
 
 const store = createStore(reducer, applyMiddleware(thunk));
 const routeKey: string[] = [];
-// function sendToAnalytics(metric) {
-//   // console.log(metric);
-//   // const body = JSON.stringify(metric);
-//   // Use `navigator.sendBeacon()` if available, falling back to `fetch()`.
-//   // (navigator.sendBeacon && navigator.sendBeacon('/analytics', body)) ||
-//   //     fetch('/analytics', {body, method: 'POST', keepalive: true});
-// }
-// const supportsHistory = "pushState" in window.history;
+function sendToAnalytics(metric?: Metric) {
+  // const body = JSON.stringify(metric);
+  console.log(metric);
+  // Use `navigator.sendBeacon()` if available, falling back to `fetch()`.
+  // (navigator.sendBeacon && navigator.sendBeacon('/analytics', body)) ||
+  //     fetch('/analytics', {body, method: 'POST', keepalive: true});
+}
 
 ReactDOM.render(
   <Provider store={store}>
     <Router basename="/react-template-pro">
-      <Suspense fallback={<div>Loading...</div>}>
-        {/* <Router basename="/react-template-pro" forceRefresh={!supportsHistory}>
-      <Suspense maxDuration={500} fallback={<div>Loading...</div>}> */}
+      <Suspense fallback={<Loading />}>
         <Switch>
           {root.map((item) => {
             if (item.key) {
@@ -47,4 +46,4 @@ ReactDOM.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals(sendToAnalytics);
+reportWebVitals(sendToAnalytics);

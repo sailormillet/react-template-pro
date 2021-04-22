@@ -5,6 +5,7 @@
     "yarn.lock": true
   },
   "editor.formatOnSave": true,
+  "eslint.autoFixOnSave": true,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
