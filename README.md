@@ -4,7 +4,7 @@ https://sailormillet.github.io/react-template-pro/
 
 - [技术栈规范](#技术栈规范)
   - [项目管理](#项目管理)
-  - [vsCode需要的插件](#vsCode需要的插件)
+  - [vsCode 需要的插件](#vsCode需要的插件)
   - [语言](#语言)
   - [框架](#框架)
   - [样式](#样式)
@@ -28,16 +28,15 @@ https://sailormillet.github.io/react-template-pro/
 - ✅ Javascript
   - 需要使用 jsdoc 进行注释, 推荐[渐进式迁移到 Typescript](https://www.typescriptlang.org/docs/handbook/type-checking-javascript-files.html). 在无法运行 Typescript 的环境也推荐该注释方式
 
-## vsCode需要的插件
+## vsCode 需要的插件
 
 - EditorConfig
 - stylelint
-- prettier 当安装结束后， 在项目根目录新建一个文件夹 .vscode ，在此文件下再建一个 settings.json 文件：该文件的配置优先于 vscode 全局的 settings.json ，这样别人下载了你的项目进行开发，也不会因为全局 setting.json 的配置不同而导致 Prettier 或之后会说到的 ESLint 、 StyleLint 失效，接下来在该文件内输入以下代码：
+- prettier 当安装结束后， 在项目根目录新建一个文件夹 .vscode ，在此文件下再建一个 settings.json 文件：该文件的配置优先于 vscode  全局的 settings.json ，这样别人下载了你的项目进行开发，也不会因为全局 setting.json  的配置不同而导致 Prettier  或之后会说到的 ESLint 、 StyleLint  失效，接下来在该文件内输入以下代码：
 - stylelint
 - stylelint
 - stylelint
 - stylelint
-
 
 ## 框架
 
@@ -119,35 +118,44 @@ https://sailormillet.github.io/react-template-pro/
 │   ├── index.html              // html公共模版
 │   ├── favicon.ico             // 公共logo
 ├── src                         // 源文件开发目录
-│   ├── components              // 基本组件
-│   ├── config                  // 全局配置
-│   │   └── index.js
+│   ├── assets                  // 静态资源，会被打包优化
+│   ├── common                  // 公共配置，比如统一请求封装，session 封装
+│   │   ├── http-client
+│   │   └── session
+│   ├── components              // 全局组件，分业务组件或 UI 组件
+│   │   ├── Toast
+│   ├── config                  // 全局配置文件目录
+│   │   └── index.ts
+│   ├── hooks                   // 自定义 hook
+│   │   └── index.ts
+│   ├── layouts                 // 模板，不同的路由，可以配置不同的模板
+│   │   └── index.tsx
+│   ├── lib                     // 通常这里防止第三方库，比如 jweixin.js、jsBridge.js
+│   │   ├── README.md         // 就近原则页面级别的组件
+│   │   ├── jsBridge.js
+│   │   └── jweixin.js
+│   ├── pages                   // 具体业务页面
+│   │   ├── components          // 就近原则页面级别的组件
+│   │   ├── home
+│   │   └──
+│   ├── routes                  // 路由配置
+│   │   └──index.ts             // 总入口
 │   ├── styles                  // 全局公用css以及iconfont
 │   │   ├── font
-│   │   ├── theme.js
+│   │   ├── theme.ts
 │   │   ├── base.module.scss
 │   │   └── variables.module.scss
-│   ├── assets                  // 图片资源
-│   ├── pages                   // 具体业务页面
-│   │   ├──  userCenter
-│   │   │   ├──  setting        //  设置头像昵称
-│   │   │   ├──  user_center    //  个人中心
-│   │   │   └──  ban_french     //  集合落地页
-│   │   ├──
-│   │   └──
-│   ├── router                  // 路由
-│   │   └──index.js             // 总入口
-│   ├── reducers                // 状态管理
-│   │   └── index.js            // redux文件列表
 │   ├── utils                   // 全局公用工具类
-│   │   ├── ajax.js             // 调用请求接口
-│   │   ├── index.js            // 工具库
-│   │   └── log.js              // 打点
+│   │   ├── ajax.ts             // 调用请求接口
+│   │   ├── index.ts            // 工具库
+│   │   └── log.ts              // 打点
+│   ├── reducers/ reducers      // 状态管理
+│   │   └── index.ts            // redux文件列表
 │   └── constants               // 常量
 ├── tests                       // 单元测试
 ├── template                    // 模板
 ├── README.md                   // 开发文档
-├── setupProxy.js               // 开发环境中代理 API 请求
+├── setupProxy.ts               // 开发环境中代理 API 请求
 ├── config-overrides.js         // webpack打包的配置
 ├── build.sh                    // 编译配置
 ├── .gitignore
@@ -158,6 +166,64 @@ https://sailormillet.github.io/react-template-pro/
 ├── package.json                // 模块描述文件
 ├── yarn.lock                   // 依赖文件
 ```
+
+## alias setting
+
+> 这里建议采用的是 @/ 开头，为什么不用 @ 开头，这是为了避免跟业界某些 npm 包名冲突
+
+别名的配置，我们需要关注的是两个地方：
+tsconfig.json 的 tsconfig.paths.json //用来给 Typescript 识别
+
+```
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*":["./src/*"],
+      "@/components/*":["./src/components/*"],
+      "@/styles/*":["./src/styles/*"],
+      "@/config/*":["./src/config/*"],
+      "@/utils/*":["./src/utils/*"],
+      "@/common/*":["./src/common/*"],
+      "@/assets/*":["./src/assets/*"],
+      "@/pages/*":["./src/pages/*"],
+      "@/routes/*":["./src/routes/*"],
+      "@/hooks/*":["./src/hooks/*"],
+      "@/reducer/*":["./src/reducer/*"]
+    }
+  }
+}
+
+```
+
+config-overrides.js //用来编译识别用的
+
+```
+const { alias, configPaths, aliasJest } = require("react-app-rewire-alias");
+// 打包配置
+const addCustomize = () => (config) => {
+  console.log(process.env.NODE_ENV);
+  const aliasMap = configPaths("./tsconfig.paths.json");
+  alias(aliasMap)(config);
+  aliasJest(aliasMap)(config);
+```
+
+## 路由规划
+
+- @loadable/component 路由动态加载
+- 基于路由的代码分割 React.lazy
+
+## 代码分割
+
+- 动态 import()
+
+```
+import("./math").then(math => {
+  console.log(math.add(16, 26));
+});
+```
+
+- React.lazy Suspense
 
 ## 模板引擎
 

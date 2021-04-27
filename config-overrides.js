@@ -13,7 +13,7 @@ const {
   babelExclude,
   adjustStyleLoaders,
 } = require("customize-cra");
-const {alias, configPaths,aliasJest} = require('react-app-rewire-alias')
+const { alias, configPaths, aliasJest } = require("react-app-rewire-alias");
 // const theme = require('./src/css/theme.js');
 
 // const isEnvProduction = process.env.NODE_ENV === 'production'
@@ -22,10 +22,10 @@ const {alias, configPaths,aliasJest} = require('react-app-rewire-alias')
 // 打包配置
 const addCustomize = () => (config) => {
   console.log(process.env.NODE_ENV);
-  const aliasMap = configPaths('./tsconfig.paths.json')
-  console.log(aliasMap)
-  alias(aliasMap)(config)
-  aliasJest(aliasMap)(config)
+  const aliasMap = configPaths("./tsconfig.paths.json");
+  console.log(aliasMap);
+  alias(aliasMap)(config);
+  aliasJest(aliasMap)(config);
   if (process.env.NODE_ENV === "production") {
     // 关闭sourceMap
     // config.devtool = 'cheap-module-source-map';

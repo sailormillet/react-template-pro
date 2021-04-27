@@ -2,15 +2,17 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@src/*": ["src/*"],
-      "@router": ["src/router/index.ts"],
-      "@components": ["src/components/index.ts"],
-      "@pages/*": ["src/pages/*"],
-      "@utils/*": ["src/utils"],
-      "@styles/*": ["src/styles"],
-      "@assets/*": ["src/assets"],
-      "@constants/*": ["src/constants"],
-      "@reducers/*": ["src/reducers"]
+      "@/*":["./src/*"],
+      "@/components/*":["./src/components/*"],
+      "@/styles/*":["./src/styles/*"],
+      "@/config/*":["./src/config/*"],
+      "@/utils/*":["./src/utils/*"],
+      "@/common/*":["./src/common/*"],
+      "@/assets/*":["./src/assets/*"],
+      "@/pages/*":["./src/pages/*"],
+      "@/routes/*":["./src/routes/*"],
+      "@/hooks/*":["./src/hooks/*"],
+      "@/reducer/*":["./src/reducer/*"]
     }
   }
 }

@@ -5,9 +5,9 @@ import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import "./index.scss";
-import { root } from "@router";
+import { root } from "@/routes";
 import { Metric } from "web-vitals";
-import { Loading } from "@components";
+import { Loading } from "@/components";
 import reportWebVitals from "./reportWebVitals";
 import reducer from "./reducers";
 

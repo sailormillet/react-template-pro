@@ -12,22 +12,22 @@ export const root = [
     exact: true,
     path: "/",
     key: "home",
-    component: lazy(() => slow(import("@pages/home"))),
+    component: lazy(() => slow(import("@/pages/home"))),
   },
   {
     exact: true,
     path: "/product",
     key: "product",
-    component: lazy(() => import("@pages/product")),
+    component: lazy(() => import("@/pages/product")),
   },
   {
     exact: true,
     path: "/my",
     key: "my",
-    component: lazy(() => import("@pages/userCenter")),
+    component: lazy(() => import("@/pages/userCenter")),
   },
   {
     key: "404",
-    component: lazy(() => import("@pages/notFound")),
+    component: lazy(() => import("@/pages/notFound")),
   },
 ];
